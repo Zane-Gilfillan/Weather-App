@@ -6,9 +6,10 @@ let tempHi = document.querySelector('.high-temp')
 let tempLo = document.querySelector('.low-temp')
 let humid = document.querySelector('.humid')
 let overV = document.querySelector('.desc');
+let windowFiveDay = document.querySelector('#five-window')
 let buttonMain = document.querySelector('.main-btn');
 let buttonFiveDay = document.querySelector('.five-day-btn');
-let windowFiveDay = document.querySelector('#five-window')
+let buttonClose = document.querySelector('.close-btn')
 
 //Variables for Five Day Window
 
@@ -60,7 +61,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
     temp.innerHTML = "the temperature is: " + mainTemp + " •F";
     tempHi.innerHTML = "the high for today is: " + highTemp + " •F";
     tempLo.innerHTML = "the low for today is: " + lowTemp + "• F";
-    humid.innerHTML = "the humidity is: " + mainHumid;
+    humid.innerHTML = "the humidity is: " + mainHumid + "%";
     overV.innerHTML = "looks like we have " + cityOver;
 
     // console.log(data)
@@ -78,6 +79,9 @@ buttonFiveDay.addEventListener('click', () => {
     windowFiveDay.classList.remove('hide')
 })
 
+buttonClose.addEventListener('click', () => {
+    windowFiveDay.classList.add('hide')
+})
 
 //FIVE DAY WEATHER WINDOW
 buttonMain.addEventListener('click', function(name){
