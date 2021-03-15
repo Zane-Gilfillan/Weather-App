@@ -1,3 +1,4 @@
+//Variables for Current Weather Window
 let input = document.querySelector('.input-text');
 let main = document.querySelector('#city-name');
 let temp = document.querySelector('.temp');
@@ -9,6 +10,37 @@ let buttonMain = document.querySelector('.main-btn');
 let buttonFiveDay = document.querySelector('.five-day-btn');
 let windowFiveDay = document.querySelector('#five-window')
 
+//Variables for Five Day Window
+
+//Day One -----------------------
+let dateOne = document.querySelector(".day-one-date")
+let tempOne = document.querySelector(".day-one-temp")
+let tempHiOne = document.querySelector(".day-one-high")
+let tempLowOne = document.querySelector(".day-one-low")
+
+//Day Two -----------------------
+let dateTwo = document.querySelector(".day-two-date")
+let tempTwo = document.querySelector(".day-two-temp")
+let tempHiTwo = document.querySelector(".day-two-high")
+let tempLowTwo = document.querySelector(".day-two-low")
+
+//Day Three -----------------------
+let dateThree = document.querySelector(".day-three-date")
+let tempThree = document.querySelector(".day-three-temp")
+let tempHiThree = document.querySelector(".day-three-high")
+let tempLowThree = document.querySelector(".day-three-low")
+
+//Day Four -----------------------
+let dateFour = document.querySelector(".day-four-date")
+let tempFour = document.querySelector(".day-four-temp")
+let tempHiFour = document.querySelector(".day-four-high")
+let tempLowFour = document.querySelector(".day-four-low")
+
+//Day Five -----------------------
+let dateFive = document.querySelector(".day-five-date")
+let tempFive = document.querySelector(".day-five-temp")
+let tempHiFive = document.querySelector(".day-five-high")
+let tempLowFive = document.querySelector(".day-five-low")
 
 
 //Current Weather
@@ -31,8 +63,8 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
     humid.innerHTML = "the humidity is: " + mainHumid;
     overV.innerHTML = "looks like we have " + cityOver;
 
-    
-    
+    // console.log(data)
+
 })
 // .catch(err => alert("Wrong city name!"));
 })
@@ -47,13 +79,12 @@ buttonFiveDay.addEventListener('click', () => {
 })
 
 
-
-//FIVE DAY
-$.getJSON(
-    'http://api.openweathermap.org/data/2.5/forecast?q=Chicago&units=imperial&appid=8979032860447814896d5eb119d2c288',
-    function(data) {
-        console.log(data)
-
+//FIVE DAY WEATHER WINDOW
+buttonMain.addEventListener('click', function(name){
+    fetch('http://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&units=imperial&appid=8979032860447814896d5eb119d2c288')
+    .then(response => response.json())
+    .then(data => {
+        
         //FIRST DAY IN FIVE DAY
         let dayOneTime = data.list[1].dt_txt
         let dayOneTemp = data.list[1].main.temp
@@ -61,11 +92,10 @@ $.getJSON(
         let dayOneTempLow = data.list[1].main.temp_max
         let dayOneHumid = data.list[1].main.humidity
 
-        console.log(dayOneTime)
-        console.log(dayOneTemp)
-        console.log(dayOneTempHi)
-        console.log(dayOneTempLow)
-        console.log(dayOneHumid)
+        dateOne.innerHTML = dayOneTime
+        tempOne.innerHTML = dayOneTemp
+        tempHiOne.innerHTML = dayOneTempHi
+        tempLowOne.innerHTML = dayOneTempLow
 
         //SECOND DAY IN FIVE DAY
         let dayTwoTime = data.list[9].dt_txt
@@ -74,11 +104,10 @@ $.getJSON(
         let dayTwoTempLow = data.list[9].main.temp_max
         let dayTwoHumid = data.list[9].main.humidity
 
-        console.log(dayTwoTime)
-        console.log(dayTwoTemp)
-        console.log(dayTwoTempHi)
-        console.log(dayTwoTempLow)
-        console.log(dayTwoHumid)
+        dateTwo.innerHTML = dayTwoTime
+        tempTwo.innerHTML = dayTwoTemp
+        tempHiTwo.innerHTML = dayTwoTempHi
+        tempLowTwo.innerHTML = dayTwoTempLow
 
         //THIRD DAY IN FIVE DAY
         let dayThreeTime = data.list[17].dt_txt
@@ -87,11 +116,10 @@ $.getJSON(
         let dayThreeTempLow = data.list[17].main.temp_max
         let dayThreeHumid = data.list[17].main.humidity
 
-        console.log(dayThreeTime)
-        console.log(dayThreeTemp)
-        console.log(dayThreeTempHi)
-        console.log(dayThreeTempLow)
-        console.log(dayThreeHumid)
+        dateThree.innerHTML = dayThreeTime
+        tempThree.innerHTML = dayThreeTemp
+        tempHiThree.innerHTML = dayThreeTempHi
+        tempLowThree.innerHTML = dayThreeTempLow
 
         //FOURTH DAY IN FIVE DAY
         let dayFourTime = data.list[25].dt_txt
@@ -100,12 +128,12 @@ $.getJSON(
         let dayFourTempLow = data.list[25].main.temp_max
         let dayFourHumid = data.list[25].main.humidity
 
-        console.log(dayFourTime)
-        console.log(dayFourTemp)
-        console.log(dayFourTempHi)
-        console.log(dayFourTempLow)
-        console.log(dayFourHumid)
+        dateFour.innerHTML = dayFourTime
+        tempFour.innerHTML = dayFourTemp
+        tempHiFour.innerHTML = dayFourTempHi
+        tempLowFour.innerHTML = dayFourTempLow
 
+        
         //FIFTH DAY IN FIVE DAY
         let dayFiveTime = data.list[33].dt_txt
         let dayFiveTemp = data.list[33].main.temp
@@ -113,11 +141,15 @@ $.getJSON(
         let dayFiveTempLow = data.list[33].main.temp_max
         let dayFiveHumid = data.list[33].main.humidity
 
-        console.log(dayFiveTime)
-        console.log(dayFiveTemp)
-        console.log(dayFiveTempHi)
-        console.log(dayFiveTempLow)
-        console.log(dayFiveHumid)
+        dateFive.innerHTML = dayFiveTime
+        tempFive.innerHTML = dayFiveTemp
+        tempHiFive.innerHTML = dayFiveTempHi
+        tempLowFive.innerHTML = dayFiveTempLow
+    
+        // console.log(data)
+    
+    })
+    // .catch(err => alert("Wrong city name!"));
+    })
 
-    }    
-)
+

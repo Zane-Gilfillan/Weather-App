@@ -21,7 +21,7 @@ $light-color: rgba(204, 191, 191, 0.884);
 //main
 
 body {
-    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    background: linear-gradient(rgb(47, 150, 163), rgba(165, 79, 187, 0.719));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,6 +112,15 @@ body {
         padding: 1rem;
         margin: 1rem;
 
+        .date-holder {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                font-size: 2rem;
+            }
+        }
+
         .data-holder {
             display: flex;
             margin: 1rem;
@@ -126,6 +135,15 @@ body {
         border-radius: 2rem;
         padding: 1rem;
         margin: 1rem;
+
+        .date-holder {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                font-size: 2rem;
+            }
+        }
 
         .data-holder {
             display: flex;
@@ -142,6 +160,15 @@ body {
         padding: 1rem;
         margin: 1rem;
 
+        .date-holder {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                font-size: 2rem;
+            }
+        }
+
         .data-holder {
             display: flex;
             margin: 1rem;
@@ -157,6 +184,15 @@ body {
         padding: 1rem;
         margin: 1rem;
 
+        .date-holder {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                font-size: 2rem;
+            }
+        }
+
         .data-holder {
             display: flex;
             margin: 1rem;
@@ -171,6 +207,15 @@ body {
         border-radius: 2rem;
         padding: 1rem;
         margin: 1rem;
+
+        .date-holder {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                font-size: 2rem;
+            }
+        }
 
         .data-holder {
             display: flex;
