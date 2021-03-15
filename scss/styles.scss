@@ -10,6 +10,10 @@
 //variables
 $light-color: rgba(204, 191, 191, 0.884);
 
+.hide {
+    display: none;
+}
+
 //main
 
 body {
@@ -23,15 +27,60 @@ body {
 }
 
 .window-container {
+
+    .search-bar {
+        display: flex;
+        padding: 1rem;
+        margin: 1rem;
+        justify-content: space-around;
+        
+        .input-text {
+            height: 3rem;
+            width: 30rem;
+            font-size: 2.5rem;
+            color: $light-color;
+            background-color: rgba(64, 64, 88, 0.603);
+            
+        }
+
+        .main-btn {
+            height: 3rem;
+            width: 9rem;
+            border-radius: .8rem;
+            font-size: 2rem;
+            background-color: rgba(238, 57, 12, 0.781);
+            color: $light-color;
+            cursor: pointer;
+            border: none;
+        }
+    }
     
     .data-container {
 
+        padding: 1rem;
+
         h1 {
             font-size: 8rem;
+            text-align: center;
         }
 
         h2 {
             font-size: 3rem;
+        }
+
+        .five-day-btn {
+            height: 5rem;
+            width: 30rem;
+            padding: 1rem;
+            border-radius: .8rem;
+            font-size: 1.7rem;
+            background-color: rgba(238, 57, 12, 0.781);
+            color: $light-color;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            left: 6rem;
+            top: 3rem;
         }
     }
 }

@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>weather app</title>
 </head>
 <body>
     
-    
+    <!-- Current Weather Window -->
     <div class="window-container">
-        <div class="input">
-            <input type="text" placeholder="Enter the city" class="input_text">
-            <input type="submit" value="Submit" class="submit">
+        <div class="search-bar">
+            <input type="text" placeholder="search by city" class="input-text">
+            <input type="submit" value="Submit" class="main-btn">
         </div>   
         <div class="data-container">
             <div class="card">
@@ -23,14 +23,38 @@
                 <h2 class="temp"></h2>
                 <h2 class="high-temp"></h2>
                 <h2 class="low-temp"></h2>
+                <h2 class="humid"></h2>
                 <h2 class="desc"></h2>
             </div>
+            <button class="five-day-btn hide">click for five day weather forecast</button>
         </div>
         
     </div>
-    <!-- <div class="window-container">
+
+    <!-- Five Day Forecast -->
+    <div id="five-window" class="window-container hide">
+        <h1>five day forecast</h1>
+        <div class="day-one">
+            <h2>day one</h2>
+        </div>
+
+        <div class="day-two">
+            <h2>day two</h2>
+        </div>
+
+        <div class="day-three">
+            <h2>day three</h2>
+        </div>
+
+        <div class="day-four">
+            <h2>day four</h2>
+        </div>
+
+        <div class="day-five">
+            <h2>day five</h2>
+        </div>
         
-    </div> -->
+    </div>
     
 
 
