@@ -5,6 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
+    textarea:focus, 
+    input:focus {
+        outline: none;
+    }
 }
 
 //variables
@@ -35,11 +39,17 @@ body {
         justify-content: space-around;
         
         .input-text {
-            height: 3rem;
+            padding: 1rem;
+            height: 3.5rem;
             width: 30rem;
             font-size: 2.5rem;
             color: $light-color;
             background-color: rgba(64, 64, 88, 0.603);
+            border-radius: 2rem;
+
+            &:focus {
+                border: none;
+            }
             
         }
 
@@ -81,6 +91,92 @@ body {
             position: relative;
             left: 6rem;
             top: 3rem;
+        }
+    }
+}
+
+.five-day-container {
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .day-one {
+        height: 10rem;
+        border: .3rem rgba(0, 0, 0, 0.432) solid;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+
+        .data-holder {
+            display: flex;
+            margin: 1rem;
+            font-size: 4rem;
+            justify-content: space-around;
+        }
+    }
+    
+    .day-two {
+        height: 10rem;
+        border: .3rem rgba(0, 0, 0, 0.432) solid;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+
+        .data-holder {
+            display: flex;
+            margin: 1rem;
+            font-size: 4rem;
+            justify-content: space-around;
+        }
+    }
+
+    .day-three {
+        height: 10rem;
+        border: .3rem rgba(0, 0, 0, 0.432) solid;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+
+        .data-holder {
+            display: flex;
+            margin: 1rem;
+            font-size: 4rem;
+            justify-content: space-around;
+        }
+    }
+
+    .day-four {
+        height: 10rem;
+        border: .3rem rgba(0, 0, 0, 0.432) solid;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+
+        .data-holder {
+            display: flex;
+            margin: 1rem;
+            font-size: 4rem;
+            justify-content: space-around;
+        }
+    }
+
+    .day-five {
+        height: 10rem;
+        border: .3rem rgba(0, 0, 0, 0.432) solid;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+
+        .data-holder {
+            display: flex;
+            margin: 1rem;
+            font-size: 4rem;
+            justify-content: space-around;
         }
     }
 }
