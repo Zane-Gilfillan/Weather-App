@@ -92,65 +92,66 @@ buttonMain.addEventListener('click', function(name){
         //FIRST DAY IN FIVE DAY
         let dayOneTime = data.list[1].dt_txt
         let dayOneTemp = data.list[1].main.temp
-        let dayOneTempHi = data.list[1].main.temp_min
-        let dayOneTempLow = data.list[1].main.temp_max
+        let dayOneTempHi = data.list[1].main.temp_max
+        let dayOneTempLow = data.list[1].main.temp_min
         let dayOneHumid = data.list[1].main.humidity
 
         dateOne.innerHTML = dayOneTime
-        tempOne.innerHTML = dayOneTemp
-        tempHiOne.innerHTML = dayOneTempHi
-        tempLowOne.innerHTML = dayOneTempLow
+        tempOne.innerHTML = 'T: ' + dayOneTemp
+        tempHiOne.innerHTML = 'H: ' + dayOneTempHi
+        tempLowOne.innerHTML = 'L: ' + dayOneTempLow
 
         //SECOND DAY IN FIVE DAY
         let dayTwoTime = data.list[9].dt_txt
         let dayTwoTemp = data.list[9].main.temp
-        let dayTwoTempHi = data.list[9].main.temp_min
-        let dayTwoTempLow = data.list[9].main.temp_max
+        let dayTwoTempHi = data.list[9].main.temp_max
+        let dayTwoTempLow = data.list[9].main.temp_min
         let dayTwoHumid = data.list[9].main.humidity
 
         dateTwo.innerHTML = dayTwoTime
-        tempTwo.innerHTML = dayTwoTemp
-        tempHiTwo.innerHTML = dayTwoTempHi
-        tempLowTwo.innerHTML = dayTwoTempLow
+        tempTwo.innerHTML = 'T: ' + dayTwoTemp
+        tempHiTwo.innerHTML = 'H: ' + dayTwoTempHi
+        tempLowTwo.innerHTML = 'L: ' + dayTwoTempLow
 
         //THIRD DAY IN FIVE DAY
         let dayThreeTime = data.list[17].dt_txt
         let dayThreeTemp = data.list[17].main.temp
-        let dayThreeTempHi = data.list[17].main.temp_min
-        let dayThreeTempLow = data.list[17].main.temp_max
+        let dayThreeTempHi = data.list[17].main.temp_max
+        let dayThreeTempLow = data.list[17].main.temp_min
         let dayThreeHumid = data.list[17].main.humidity
 
         dateThree.innerHTML = dayThreeTime
-        tempThree.innerHTML = dayThreeTemp
-        tempHiThree.innerHTML = dayThreeTempHi
-        tempLowThree.innerHTML = dayThreeTempLow
+        tempThree.innerHTML = 'T: ' + dayThreeTemp
+        tempHiThree.innerHTML = 'H: ' + dayThreeTempHi
+        tempLowThree.innerHTML = 'L: ' + dayThreeTempLow
+
 
         //FOURTH DAY IN FIVE DAY
         let dayFourTime = data.list[25].dt_txt
         let dayFourTemp = data.list[25].main.temp
-        let dayFourTempHi = data.list[25].main.temp_min
-        let dayFourTempLow = data.list[25].main.temp_max
+        let dayFourTempHi = data.list[25].main.temp_max
+        let dayFourTempLow = data.list[25].main.temp_min
         let dayFourHumid = data.list[25].main.humidity
 
         dateFour.innerHTML = dayFourTime
-        tempFour.innerHTML = dayFourTemp
-        tempHiFour.innerHTML = dayFourTempHi
-        tempLowFour.innerHTML = dayFourTempLow
+        tempFour.innerHTML = 'T: ' + dayFourTemp
+        tempHiFour.innerHTML = 'H: ' + dayFourTempHi
+        tempLowFour.innerHTML = 'L: ' + dayFourTempLow
 
         
         //FIFTH DAY IN FIVE DAY
         let dayFiveTime = data.list[33].dt_txt
         let dayFiveTemp = data.list[33].main.temp
-        let dayFiveTempHi = data.list[33].main.temp_min
-        let dayFiveTempLow = data.list[33].main.temp_max
+        let dayFiveTempHi = data.list[33].main.temp_max
+        let dayFiveTempLow = data.list[33].main.temp_min
         let dayFiveHumid = data.list[33].main.humidity
 
         dateFive.innerHTML = dayFiveTime
-        tempFive.innerHTML = dayFiveTemp
-        tempHiFive.innerHTML = dayFiveTempHi
-        tempLowFive.innerHTML = dayFiveTempLow
+        tempFive.innerHTML = 'T: ' + dayFiveTemp
+        tempHiFive.innerHTML = 'H: ' + dayFiveTempHi
+        tempLowFive.innerHTML = 'L: ' + dayFiveTempLow
     
-        // console.log(data)
+         console.log(data)
     
     })
     // .catch(err => alert("Wrong city name!"));

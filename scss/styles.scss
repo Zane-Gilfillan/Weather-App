@@ -5,9 +5,18 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
-    textarea:focus, 
-    input:focus {
+    
+    input, button, textarea, select {
         outline: none;
+        transition: 200ms ease-in;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
     }
 }
 
@@ -46,6 +55,7 @@ body {
             color: $light-color;
             background-color: rgba(64, 64, 88, 0.603);
             border-radius: 2rem;
+            border: none;
 
             &:focus {
                 border: none;
