@@ -8,16 +8,32 @@
 }
 
 //variables
-$light-color: rgba(216, 210, 210, 0);
+$light-color: rgba(204, 191, 191, 0.884);
 
 //main
 
 body {
-    background-image: url(../img/snow_island.jpg);
+    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: $light-color;
+    font-family: Poppins;
+}
+
+.window-container {
+    
+    .data-container {
+
+        h1 {
+            font-size: 8rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+    }
 }
 
 

@@ -1,63 +1,55 @@
-let userInput = $('#city-search')
-let userBtn = $('#search-btn')
-let cityName = $('#city')
-let cityTemp = $('#temp')
-let cityHigh = $('#high')
-let cityLow = $('#low')
-let cityHummid = $('#humidity')
+let input = document.querySelector('.input_text');
+let main = document.querySelector('#city-name');
+let temp = document.querySelector('.temp');
+let tempHi = document.querySelector('.high-temp')
+let tempLo = document.querySelector('.low-temp')
+let overV = document.querySelector('.desc');
+let button= document.querySelector('.submit');
 
 
 
-userBtn.click( () => {
-   
-    console.log('check')
+//Current Weather
+button.addEventListener('click', function(name){
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=imperial&appid=8979032860447814896d5eb119d2c288')
+.then(response => response.json())
+.then(data => {
+    let cityName = data['name'];
+    let mainTemp = data['main']['temp'];
+    let lowTemp = data['main']['temp_min']
+    let highTemp = data['main']['temp_max']
+    let cityOver = data['weather'][0]['description'];
+
+    main.innerHTML = cityName;
+    temp.innerHTML = "the temperature is: " + mainTemp;
+    tempHi.innerHTML = "the high for today is: " + highTemp;
+    tempLo.innerHTML = "the low for today is: " + lowTemp;
+    overV.innerHTML = "looks like we have " + cityOver;
+
+    input.value ="";
+
 })
 
-//CURRENT WEATHER
-$.getJSON(
-    'http://api.openweathermap.org/data/2.5/weather?q='+userInput.value+'&units=imperial&appid=8979032860447814896d5eb119d2c288',
-    function(data) {
+.catch(err => alert("Wrong city name!"));
+})
 
-        input.value = '';
-        console.log(data)
-        nameId = data.name
-        tempId = data.main.temp
-        highId = data.main.temp_max
-        lowId = data.main.temp_min
-        humId = data.main.humidity
-
-        cityName.text(nameId)
-        cityTemp.text('current temp: ' + tempId)
-        cityHigh.text('todays high: ' + highId)
-        cityLow.text('todays low: ' + lowId)
-        cityHummid.text('humidity: ' + humId)
-
-        console.log(nameId, tempId, highId, lowId)
-
-        
-        
-    }    
-)
-
-
-//FIVE DAY FORECAST
-$.getJSON(
-    'http://api.openweathermap.org/data/2.5/forecast?q=Chicago&units=imperial&appid=8979032860447814896d5eb119d2c288',
-    function(data) {
-        console.log(data)
-        nameId = data.city.name
-        tempId = data.list[0].main.temp
-        // highId = data.main.temp_max
-        // lowId = data.main.temp_min
-
-        // cityName.text(nameId)
-        // cityTemp.text(tempId)
-        // cityHigh.text(highId)
-        // cityLow.text(lowId)
-
-        console.log(tempId)
-
-        
-        
-    }    
-)
+//FIVE DAY
+// button.addEventListener('click', function(name){
+//     fetch('http://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=imperial&appid=8979032860447814896d5eb119d2c288')
+//     .then(response => response.json())
+//     .then(data => {
+//         let cityName = data['name'];
+//         let mainTemp = data['main']['temp'];
+//         let lowTemp = data['main']['temp_min']
+//         let highTemp = data['main']['temp_max']
+//         let cityOver = data['weather'][0]['description'];
+    
+//         main.innerHTML = cityName;
+//         temp.innerHTML = "the temperature is: " + mainTemp;
+//         tempHi.innerHTML = "the high for today is: " + highTemp;
+//         tempLo.innerHTML = "the low for today is: " + lowTemp;
+//         overV.innerHTML = "looks like we have " + cityOver;
+    
+//         input.value ="";
+    
+//     })
+// })
