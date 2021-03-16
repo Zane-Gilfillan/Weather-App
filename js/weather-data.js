@@ -70,19 +70,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
 // .catch(err => alert("Wrong city name!"));
 })
 
-//Button main reveals five day button choice, buttonFiveDay reveals five day window
-buttonMain.addEventListener('click', () => {
-    buttonFiveDay.classList.remove('hide')
-})
-
-buttonFiveDay.addEventListener('click', () => {
-    windowFiveDay.classList.remove('hide')
-})
-
-buttonClose.addEventListener('click', () => {
-    windowFiveDay.classList.add('hide')
-})
-
 //FIVE DAY WEATHER WINDOW
 buttonMain.addEventListener('click', function(name){
     fetch('http://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&units=imperial&appid=8979032860447814896d5eb119d2c288')
@@ -155,6 +142,19 @@ buttonMain.addEventListener('click', function(name){
     
     })
     // .catch(err => alert("Wrong city name!"));
-    })
+})
 
+//BUTTONS
 
+//Button main reveals five day button choice, buttonFiveDay reveals five day window
+buttonMain.addEventListener('click', () => {
+    buttonFiveDay.classList.remove('hide')
+})
+
+buttonFiveDay.addEventListener('click', () => {
+    windowFiveDay.classList.remove('hide')
+})
+
+buttonClose.addEventListener('click', () => {
+    windowFiveDay.classList.add('hide')
+})
